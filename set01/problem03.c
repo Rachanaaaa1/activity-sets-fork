@@ -1,3 +1,5 @@
+// Write a C program to add two numbers using **pass by value**
+
 #include<stdio.h>
 
 int input();
@@ -25,7 +27,7 @@ int main(){
   int x,y,z;
   x=input();
   y=input();
-  z=sum(x,y);
+  z=add(x,y);
   output(x,y,z);
   return 0;
 }
