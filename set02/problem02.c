@@ -2,9 +2,14 @@
 // a = b = c = equilateral triangle
 // a = b || b == c = isoceles triangle
 // a != b != c  scalene triangle
+// input 5,4,5
 
 #include<stdio.h>
 #include<math.h>
+
+int input_side();
+int check_scalene(int a, int b, int c);
+void output(int a, int b, int c, int isscalene);
 
 int main(){
   int a,b,c,isscalene;
@@ -13,13 +18,8 @@ int main(){
   c = input_side();
   isscalene = check_scalene( a, b,  c);
   output(a,b,c,isscalene);
-  
   return 0;
   }
-
-int input_side();
-int check_scalene(int a, int b, int c);
-void output(int a, int b, int c, int isscalene);
 
 int input_side(){
   int side;

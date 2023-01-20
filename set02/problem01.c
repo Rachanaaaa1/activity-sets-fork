@@ -1,4 +1,6 @@
 //  Write a program to find the area of a triangle.
+// input 1,2
+//Output:The area of the traingle with base 1.000000 and height 2.000000 is 1.000000 
 
 #include<stdio.h>
 #include<math.h>
