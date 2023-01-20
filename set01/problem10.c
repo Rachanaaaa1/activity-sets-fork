@@ -8,16 +8,17 @@ int stringcompare(char *string1, char *string2);
 void output(char *string1, char *string2, int result);
 
 int main(){
-  char string1[100],string2[100];
+  char string1[100],string2[100];  
   
   input_two_strings(string1 , string2);
- 
+  
   if(stringcompare(string1,string2) == 1){
   output(string1,string2,1);
   }
   else if(stringcompare(string1,string2) == 0){
   output(string1,string2,0);
     }
+  
   return 0;
   }
 
@@ -32,9 +33,6 @@ void input_two_strings(char *string1, char *string2){
 int stringcompare(char *string1, char *string2){
   int a = strlen(string1);
   int b = strlen(string2);
-  
-  
-    
     int i;
     
     for(i=0; string1[i] != '\0' && string2[i] != '\0';i++){

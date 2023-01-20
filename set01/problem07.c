@@ -14,8 +14,12 @@ int input_n(){
 }
 
 int sum_n_nos(int n){
-  n = (n * ( n + 1)) / 2;
-  return n;
+  int i;
+  int sum;
+  for(i = 0 ; i < n ; i++){
+    sum = i++;
+  }
+  return sum;
 }
 
 void output(int n, int sum){
