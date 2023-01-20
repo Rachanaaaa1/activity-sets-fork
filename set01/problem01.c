@@ -4,7 +4,7 @@
 
 int main()
 {
-  printf("nawaz");
+  printf("nawaz \n");
 }
 
 // cd set_
