@@ -1,5 +1,6 @@
 // Write a program to find GCD _(HCF)_ of two numbers.
 // MULTIPLICATION OF COMMOM FACTORS (highest nos)
+// input 12,16
 
 #include <stdio.h>
 #include<math.h>
@@ -14,10 +15,6 @@ int main(){
   b =input();
   gcd = find_gcd(a , b);
   output(a,b,gcd);
-  return 0;
-  
-
-
   return 0;
 }
 
@@ -40,9 +37,11 @@ int find_gcd(int a, int b){
     printf("%d",a);
     }
   }
+  return gcd;
 }
 
 void output(int a, int b, int gcd){
+  printf("%d",);
   
   }
   
