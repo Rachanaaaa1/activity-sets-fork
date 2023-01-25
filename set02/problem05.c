@@ -10,7 +10,7 @@ int find_gcd(int a, int b);
 void output(int a, int b, int gcd);
 
 int main(){
-  int a ,b, gcd;
+  int a ,b, gcd = 1,min;
   a = input();
   b =input();
   gcd = find_gcd(a , b);
@@ -20,28 +20,29 @@ int main(){
 
 int input(){
   int n;
+  printf("Enter a and b values ");
   scanf("%d",&n);
   return n;
   }
 
 int find_gcd(int a, int b){
-  int gcd;
-  while(a > b){
-    if(a > b){
-      a = a - b;
-    }
-    else{
-      b = b - a;
-      }
-    if(gcd == 1){
-    printf("%d",a);
-    }
+  int i,gcd = 1,min;
+  if(a > b){
+    min = b;
+  }
+  else{
+    min = a;
+  }
+for(i = 1; i <= min; i++){
+  if(a % i == 0 && b % i == 0){
+    gcd = i;
+  }
   }
   return gcd;
-}
+} 
 
 void output(int a, int b, int gcd){
-  printf("%d",);
+  printf("the gcd of %d and %d  is %d",a,b,gcd);
   
   }
   

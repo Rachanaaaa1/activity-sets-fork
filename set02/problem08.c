@@ -15,25 +15,24 @@ Triangle find_smallest_triangle(int n, Triangle t[n]);
 void output(int n, Triangle t[n], Triangle smallest);
 
 Triangle input_triangle(){
-  int n;
+  Triangle n;
   printf("Enter the base");
-  scanf("%f",&base);
-  printf("Enter the altitude");
-  scanf("%f",&altitude);
-  return n;
+  scanf("%f",&n.base);
+  printf("Enter the height");
+  scanf("%f",&n.height);
 }
 
 void input_n_triangles(int n, Triangle t[n]){
-  Triangle t[n];
-  Triangle i,n;
-    for(int i = 0;i <= n;i++){
+  Triangle i,n,t[n];
+  for(int i = 0;i < n;i++){
       printf("Enter the value of triangle \n");
-      scanf("%d",t[n]);
+      scanf("%d",t[i]);
     }
   }
   
 void find_area(Triangle *t){
   float area;
+  
 
 
   
