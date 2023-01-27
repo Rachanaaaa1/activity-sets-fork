@@ -44,11 +44,11 @@ void output(int sum){
 
 
 int main(){
-  int n;
+  int n,sum;
   n = input_array_size();
   int a[n];
   input_array(n,a);
-  int sum = sum_composite_numbers(n,a);
+  sum = sum_composite_numbers(n,a);
   output(sum);
   return 0;
 }

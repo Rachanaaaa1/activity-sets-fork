@@ -18,16 +18,15 @@ Triangle input_triangle(){
   Triangle t;
   printf("Enter the base");
   scanf("%f",&t.base);
-  printf("Enter the height");
-  scanf("%f",&t.height);
+  printf("Enter the altitude");
+  scanf("%f",&t.altitude);
   return t;
 }
 
 void input_n_triangles(int n, Triangle t[n]){
-  Triangle i,n,t[n];
   for(int i = 0;i < n;i++){
       printf("Enter the value of triangle \n");
-      scanf("%d",t[i]);
+      scanf("%d",t[n]);
     }
   }
   
@@ -52,7 +51,7 @@ Triangle find_smallest_triangle(int n, Triangle t[n]){
       smallest = t.area[i];
     }
   }
-  return smalllest;
+  return smallest;
 }
 
 void output(int n, Triangle t[n], Triangle smallest){
@@ -62,11 +61,11 @@ void output(int n, Triangle t[n], Triangle smallest){
 
 int main(){
   Triangle n,issmallest;
-t = Triangle input_triangle();
-input_n_triangles(n ,t);
-find_area(t);
-find_n_areas(n,t);
-issmallest = find_smallest_triangle(n,t);
-output(n , t ,smallest);
+  t = Triangle input_triangle();
+  input_n_triangles(n ,t);
+  find_area(t);
+  find_n_areas(n,t);
+  issmallest = find_smallest_triangle(n,t);
+  output(n , t ,smallest);
 
 }
