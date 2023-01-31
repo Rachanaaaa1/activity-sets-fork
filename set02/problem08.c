@@ -25,9 +25,9 @@ int input_n(){
 
 Triangle input_triangle(){
   Triangle t;
-  printf("Enter the base");
+  printf("Enter the base \n");
   scanf("%f",&t.base);
-  printf("Enter the altitude");
+  printf("Enter the altitude \n");
   scanf("%f",&t.altitude);
   return t;
 }

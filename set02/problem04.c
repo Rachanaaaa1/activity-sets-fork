@@ -4,7 +4,7 @@
 #include<stdio.h>
 
 int input_array_size();
-void input_array(int n, int a[n]);
+void input_array(int n, int a[n]); 
 int sum_composite_numbers(int n, int a[n]);
 void output(int sum);
 
@@ -16,26 +16,27 @@ int input_array_size(){
 }
 
 void input_array(int n, int a[n]){
-  int i;
+  printf("Enter array elements \n");
   for(int i = 0;i < n;i++){
-    printf("Enter array elements \n");
     scanf("%d",&a[i]);
   }
 }
 
 int sum_composite_numbers(int n, int a[n]){
-  int i,j,sum = 0,count = 0;
+  int i,j,count;
+  int result = 0;
   for(int i = 0;i < n;i++){
+    count = 0;
     for(int j = 1;j <= a[i];j++){
     if(a[i] % j == 0){
       count++;
       }
     }
-    if(count == 1){
-    sum = sum + a[i];
-      }
+   if(count > 2){
+     result = result + a[i];
+   }
     }
-  return sum;
+  return result;
 }
 
 void output(int sum){
