@@ -2,6 +2,8 @@
 // input = 35 output is 2, 3, 7, 11, 13, 19, 23, 29, 31
 
 #include<stdio.h>
+#include<stdbool.h>
+#include<string.h>
 
 int input_array_size();
 void init_array(int n, int a[n];
@@ -10,12 +12,42 @@ void output(int n, int a[n]);
 
 int input_array_size(){
   int n;
-  printf("Enter the array size ");
-  scanf("%d"&x);
-  return x;
+  printf("Enter the maximum element ");
+  scanf("%d",&n);
+  return n;
 }
 
 void init_array(int n, int a[n]){
+  bool prime[n + 1];
+  bool[0] = true;
+  bool[1] = false;
+  
   
 }
 
+void erotosthenes_sieve(int n, int a[n]){
+  for(int i = 2; i * * <= n;i++){
+    if(prime[i] = true){
+      for(int j = i * i ; j <= n; j += i){
+        prime[j] = false ;
+      }
+    }
+  }
+}
+
+void output(int n, int a[n]){
+  for(i = 2;i <= n;i++){
+    if(prime[i]){
+      printf("%d",n)
+    }
+  }
+}
+
+int main(){
+  int n,a[n];
+  n = input_array_size();
+  init_array(n,a[n]);
+  erotosthenes_sieve(n,a[n]);
+  output(n , a[n]);
+  return 0;
+}
