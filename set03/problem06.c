@@ -40,7 +40,7 @@ int sub_str_index(char* string, char* substring){
       break;
     }
   }
-  return position;
+  return index;
 }
 
 void output(char *string, char *substring, int index){
