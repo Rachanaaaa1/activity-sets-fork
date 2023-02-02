@@ -11,22 +11,20 @@ void erotosthenes_sieve(int n, int a[n]);
 void output(int n, int a[n]);
 
 int input_array_size(){
-  int n;
+  int element;
   printf("Enter the maximum element ");
-  scanf("%d",&n);
-  return n;
+  scanf("%d",&element);
+  return element;
 }
 
 void init_array(int n, int a[n]){
-  bool prime[n + 1];
-  bool[0] = true;
-  bool[1] = false;
-  
-  
+  for(i = 0 ;i < n;i++){
+    a[i] = i;
+  }
 }
 
 void erotosthenes_sieve(int n, int a[n]){
-  for(int i = 2; i * * <= n;i++){
+  for(int i = 2; i < n;i++){
     if(prime[i] = true){
       for(int j = i * i ; j <= n; j += i){
         prime[j] = false ;
@@ -36,7 +34,7 @@ void erotosthenes_sieve(int n, int a[n]){
 }
 
 void output(int n, int a[n]){
-  for(i = 2;i <= n;i++){
+  for(i = 0;i < n;i++){
     if(prime[i]){
       printf("%d",n)
     }

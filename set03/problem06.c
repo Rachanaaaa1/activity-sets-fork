@@ -4,19 +4,20 @@
 #include<stdio.h>
 #include<string.h>
 
-int main(){
-  char string,substring;
-  char a = input_string();
-  char b = input_string();
-  int index;
-  index = sub_str_index(&string,&substring);
-  output(string,substring,index);
-  return 0;
-  }
-
 void input_string(char* a, char* b);
 int sub_str_index(char* string, char* substring);
 void output(char *string, char *substring, int index);
+
+
+int main(){
+  char string[50];
+  char substring[50];
+  input_string(string , substring);
+  int index;
+  index = sub_str_index(string,substring);
+  output(string,substring,index);
+  return 0;
+  }
 
 void input_string(char* a, char* b){
   printf("Enter the a string ");
@@ -26,25 +27,26 @@ void input_string(char* a, char* b){
 }
 
 int sub_str_index(char* string, char* substring){
-  int index = -1;
-  for(int i = 0;str[i] != '\0' ; i++)
-    {
-      index = -1;
-      for(int j = 0;substr[i] != '\0';j++){
-        if(str[i + j] != substr[j]){
-          index = -1;
-          break;
-        }
-        index = i;
-      }
+  int i,j,index,position;
+  for(i = 0;string[i] != '\0' ; i++){
+    index = 0;
+    j = i;
+    while(string[j] == substring[index]){
+      position = i;
+      j++;
+      index++;
     }
-  return index;
+    if(substring[index] == '\0'){
+      break;
+    }
+  }
+  return position;
 }
 
 void output(char *string, char *substring, int index){
-  if(index != -1){
-    break;
-  }
-printf("The index of %s in %s i %d is",string,substring,index);
-  }
+  
+printf("the index of %s in %s is %d",substring,string,index);
+    
+  
+}
 
