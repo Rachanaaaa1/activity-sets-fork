@@ -17,25 +17,30 @@ void dist(Point a, Point b, float *res);
 void output(Point a, Point b, float res);
 
 int main(){
-  int a,b,res;
-  Point x = input();
+  Point a,b;
+  float res;
+  a = input();
+  b = input();
   dist(a,b,&res);
   output(a,b,res);
   return 0;
 }
 
 Point input(){
-  Point x;
+  Point p;
   printf("Enter the first and second points \n");
   scanf("%f %f",&p.x,&p.y);
-  return x;
+  return p;
 }
 
 void dist(Point a, Point b, float *res){
-  dist = sqrt(pow(a.x - b.x,2) + pow(a.y - b.y ,2));
-  *res = dist;
-}
+  float dist1,dist2;
+  dist1 = (b.x - a.x) * (b.x - a.x);
+  dist2 = (b.y - a.y) * (b.y - a.y);
+  *res = sqrt(dist1 + dist2);
+
+  }
 
 void output(Point a, Point b, float res){
-  printf("The distance between (%f,%f) and (%f ,%f) is %f",a,b,res);
+  printf("The distance between (%0.1f,%0.1f) and (%0.1f ,%0.1f) is %0.1f",a.x,a.y,b.x,b.y,res);
 }
