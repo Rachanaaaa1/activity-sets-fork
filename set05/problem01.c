@@ -34,11 +34,7 @@ Point input(){
 }
 
 void dist(Point a, Point b, float *res){
-  float dist1,dist2;
-  dist1 = (b.x - a.x) * (b.x - a.x);
-  dist2 = (b.y - a.y) * (b.y - a.y);
-  *res = sqrt(dist1 + dist2);
-
+  *res = sqrt(pow(b.x - a.x , 2) + pow (b.y - a.y , 2));
   }
 
 void output(Point a, Point b, float res){
