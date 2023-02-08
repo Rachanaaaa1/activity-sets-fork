@@ -8,46 +8,44 @@ typedef struct {
     int num, den;
 } Fraction;
 
-Fraction input(Fraction *f1,Fraction *f2,Fraction *f3);
-float smallest(Fraction f1,Fraction f2,Fraction f3);
-void output(Fraction f);
+void input_frac(Fraction *f1,Fraction *f2,Fraction *f3);
+Fraction smallest_frac(Fraction f1,Fraction f2,Fraction f3);
+void output(Fraction f1,Fraction f2,Fraction f3,Fraction min);
 
 int main(){
-  Fraction f1,f2,f3,result;
-  Fraction f = input(&f1,&f2,&f3);
-  result = smallest(f1,f2,f3);
-  output(f);
+  Fraction f1,f2,f3,min;
+  input_frac(&f1,&f2,&f3);
+  min = smallest_frac(f1,f2,f3);
+  output(f1,f2,f3,min);
   return 0;
 }
 
-Fraction input(Fraction *f1,Fraction *f2,Fraction *f3){
-  Fraction f;
+void input_frac(Fraction *f1,Fraction *f2,Fraction *f3){
   printf("Enter the num and den of f1 \n");
   scanf("%d %d",&f1->num,&f1->den);
   printf("Enter the num and den of f2 \n");
   scanf("%d %d",&f2->num,&f2->den);
   printf("Enter the num and den of f3 \n");
   scanf("%d %d",&f3->num,&f3->den);
-  return f;
 }
 
-float smallest(Fraction f1,Fraction f2,Fraction f3){
-  float result;
+Fraction smallest_frac(Fraction f1,Fraction f2,Fraction f3){
+  Fraction min;
   float val1 = f1.num/f1.den;
   float val2 = f2.num/f2.den;
   float val3 = f3.num/f3.den;
 
   if(val1 < val2 && val1 < val3){
-    return val1;
+    min = f1;
   }
   else if(val2 < val3){
-    return val2;
+    min  = f2;
   }else{
-    return val3;
+    min = f3;
   }
-  return result;
+  return min;
 }
 
-void output(Fraction f){
-  printf("The smallest  is (%d / %d)",f.num,f.den);
+void output(Fraction f1,Fraction f2,Fraction f3,Fraction min){
+  printf("The smallest of %d/%d , %d/%d and %d/%d is %d/%d",f1.num,f1.den,f2.num,f2.den,f3.num,f3.den,min.num,min.den);
 }
