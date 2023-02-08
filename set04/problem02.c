@@ -8,44 +8,46 @@ typedef struct {
     int num, den;
 } Fraction;
 
-Fraction input(Fraction f1,Fraction f2,Fraction f3);
-float smallest(Fraction *f1,Fraction *f2,Fraction *f3);
-void output(Fraction  smallest);
-
-Fraction input(Fraction f1,Fraction f2,Fraction f3){
-  Fraction num1,den1,num2,den2,num3,den3;
-  printf("Enter num1 and den1 \n");
-  scanf("%d %d",&num1,&den1);
-  printf("Enter num2 and den2 \n");
-  scanf("%d %d",&num2,&den2);
-  printf("Enter num3 and den3 \n");
-  scanf("%d %d",&num3,&den3);
-  return Fraction;
-}
-
-float smallest(Fraction *f1,Fraction *f2,Fraction *f3){
-  float val1 = num1->f/den1;
-  float val2 = num2/den2;
-  float val3 = num3/den3;
-  if(val1 < val2 && val1 < val3){
-    return val1;
-  }else{
-  if(val2 < val3){
-    return val2;
-  }
-    return val3;
-    }
-  return smallest;
-  }
-
-void output(Fraction smallest){
-  printf("The smallest %d/%d , %d/%d and %d/%d is %d/%d",num1,den1,num2,den2,num3,den3,smallest);
-}
+Fraction input(Fraction *f1,Fraction *f2,Fraction *f3);
+float smallest(Fraction f1,Fraction f2,Fraction f3);
+void output(Fraction f);
 
 int main(){
-  int Fraction,smallest;
-  Fraction = input();
-  smallest = find_smallest();
-  output(smallest);
+  Fraction f1,f2,f3,result;
+  Fraction f = input(&f1,&f2,&f3);
+  result = smallest(f1,f2,f3);
+  output(f);
   return 0;
+}
+
+Fraction input(Fraction *f1,Fraction *f2,Fraction *f3){
+  Fraction f;
+  printf("Enter the num and den of f1 \n");
+  scanf("%d %d",&f1->num,&f1->den);
+  printf("Enter the num and den of f2 \n");
+  scanf("%d %d",&f2->num,&f2->den);
+  printf("Enter the num and den of f3 \n");
+  scanf("%d %d",&f3->num,&f3->den);
+  return f;
+}
+
+float smallest(Fraction f1,Fraction f2,Fraction f3){
+  float result;
+  float val1 = f1.num/f1.den;
+  float val2 = f2.num/f2.den;
+  float val3 = f3.num/f3.den;
+
+  if(val1 < val2 && val1 < val3){
+    return val1;
+  }
+  else if(val2 < val3){
+    return val2;
+  }else{
+    return val3;
+  }
+  return result;
+}
+
+void output(Fraction f){
+  printf("The smallest  is (%d / %d)",f.num,f.den);
 }

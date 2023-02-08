@@ -11,7 +11,7 @@ void output(int n, int r, int result);
 int main(){
   int n,r,result;
   input_n_and_r(&n,&r);
-  nCr(n,r);
+  result = nCr(n,r);
   output(n,r,result);
 }
 
@@ -21,12 +21,15 @@ void input_n_and_r(int *n, int *r){
 }
 
 int nCr(int n, int r){
-  int fact = 1;
+  int fact_n = 1;
+  int fact_r = 1;
+  int fact_diff = 1;
   int result;
-    nCr = (fact n / (fact (n - r) * fact r));
-    for(int i = 1;i <= n;i++){
-    fact = fact * i;
-    result = fact;
+  nCr = (fact_n) / (fact_r * fact_diff);
+  
+  for(int i = 1;i <= n;i++){
+  int fact = fact * i;
+  result = fact;
   }
   return result;
 }
