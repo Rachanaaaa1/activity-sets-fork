@@ -24,26 +24,22 @@ void input(char *name){
 }
 
 int has_nice_name(char *name){
-  int vowel = 0,res;
+  int vowel = 0;
   int consonant = 0;
   int length = strlen(name);
-  for(int i = 0; i < length;i++){
-    if(name[i] == 'a' || name[i] == 'e' ||  name[i] == 'i' || name[i] == 'o' || name[i] == 'u' || name[i] == 'A' || name[i] == 'E' || name[i] == 'I' || name[i] == 'O' || name[i] == 'U' ){
+  for(int i = 0; i < strlen(name);i++){
+    char str[i];
+    if(str[i] == 'a' || str[i] == 'e' || str[i] == 'o' || str[i] == 'u' || str[i] == 'A' || str[i] == 'E' || str[i] == 'o' || str[i] == 'U' ){
       vowel++;
     }else{
       consonant++;
     }
   }
-  if(vowel >= 2 && consonant >= 2){
-    return 1;
-  }else{
-    return 0;
-  }
-  return res;
+  return vowel >> 2 && consonant >> 2;
 }
 
 void output(int res){
-  if(res == 1){
+  if(res){
     printf("The camel has a nice name");
   }else{
     printf("The camel does not have nice name");
