@@ -3,6 +3,7 @@
 //H(1, 1, 1) = 1.00 + 1.00 * 1.00^1 = 2.0000000
 
 #include<stdio.h>
+#include<math.h>
 
 int input_degree();
 void input_coefficients(int n, float a[n]);
@@ -12,7 +13,7 @@ void output(int n, float a[n], float x, float result);
 
 int main(){
   int n;
-  float x,a[n],result;
+  float x,a[n],result = 1;
   n = input_degree();
   input_coefficients(n,a);
   x = input_x();
@@ -30,15 +31,15 @@ int input_degree(){
 
 void input_coefficients(int n, float a[n]){
   int i;
-  for(i = n; i >= 0; i--){
-    printf("Enter the coefficients of [X ^ %d]");
+  for(i = 0; i < n + 1; i++){
+    printf("Enter the coefficient ");
     scanf("%f",&a[i]);
   }
 }
 
 float input_x(){
-  int x;
-  printf("Enter the value of x ::");
+  float x;
+  printf("Enter the value of x :");
   scanf("%f",&x);
   return x;
 }
@@ -46,17 +47,18 @@ float input_x(){
 float evaluate_polynomial(int n, float a[n], float x){
   int i;
   float result;
-  for(i = 1;i < n+1;i++){
-    result = result + a[i] * x;
+  result = a[0];
+  for(i = 1;i < n + 1;i++){
+    result = result * x + a[i];
   }
   return result;
 }
 
 void output(int n, float a[n], float x, float result){
-  printf("H(%d, ",n);
   int i;
+  printf("H(%d, ",n);
   for(i = 0;i < n;i++){
-    printf("%.0f",a[i]);
+    printf("%.0f, ",a[i]);
   }
   printf("%.0f) = %.0f \n",a[i],result);
 }
