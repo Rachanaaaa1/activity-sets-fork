@@ -37,5 +37,5 @@ float borga_X(int x){
 }
 
 void output(int x, float result){
-  printf("borga %d = %2.61f",x,result);
+  printf("borga(%d) = %2.61f",x,result);
 }
