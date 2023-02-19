@@ -38,6 +38,8 @@ Complex input_complex(){
   return number;
   }
   
+ 
+
 void input_n_complex(int n, Complex c[n]){
   int i;
   for(i = 0;i < n; i++)

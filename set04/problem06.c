@@ -25,10 +25,10 @@ void input_string(char *a){
 
 int count_words(char *string){
   int no_words = 0;
-  char *word = strtok(string," ");
+  char *word = strtok(string, " ");
   while(word != NULL){
     no_words++;
-    word = strtok(NULL," ");
+    word = strtok(NULL, " ");
   }
   return no_words;  
 }
