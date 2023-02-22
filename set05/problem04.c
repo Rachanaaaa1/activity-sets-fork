@@ -49,7 +49,8 @@ void output(float radius, float height, float length, int mood){
   }
   else if(mood == 3){
     printf("The camel is tense");
-  }else{
+  } 
+  /* else{
     printf("unknown");
-  }
+  } */
 }
