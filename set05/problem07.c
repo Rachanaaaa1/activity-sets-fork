@@ -29,13 +29,13 @@ int has_nice_name(char *name){
   int length = strlen(name);
   for(int i = 0; i < strlen(name);i++){
     char str[i];
-    if(name[i] == 'a' || name[i] == 'e' || name[i] == 'o' || name[i] == 'u' || name[i] == 'A' || name[i] == 'E' || name[i] == 'o' || name[i] == 'U' ){
+    if(str[i] == 'a' || str[i] == 'e' || str[i] == 'o' || str[i] == 'u' || str[i] == 'A' || str[i] == 'E' || str[i] == 'o' || str[i] == 'U' ){
       vowel++;
     }else{
       consonant++;
     }
   }
-  return vowel >= 2 && consonant >= 2;
+  return vowel >> 2 && consonant >> 2;
 }
 
 void output(int res){

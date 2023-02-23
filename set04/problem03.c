@@ -2,14 +2,14 @@
 // input 6 3  output : for n = 6 and r = 3 ,nCr = 20
 
 #include<stdio.h>
+#include<math.h>
 
 void input_n_and_r(int *n, int *r);
 int nCr(int n, int r);
 void output(int n, int r, int result);
 
 int main(){
-  int n,r;
-  int result;
+  int n,r,result;
   input_n_and_r(&n,&r);
   result = nCr(n,r);
   output(n,r,result);
@@ -22,23 +22,17 @@ void input_n_and_r(int *n, int *r){
 }
 
 int nCr(int n, int r){
+  int n_fact,r_fact,diff_fact,result;
   int nCr;
-  int i,n_fact,r_fact,diff_fact,diff;
-  diff = n - r;
   n_fact = 1;
   r_fact = 1;
   diff_fact = 1;
-  for(i = 1;i <= n;i++){
-    n_fact = n_fact * i;
+  nCr = (n_fact) / (r_fact * (diff_fact));
+  for(int i = 1;i <= n;i++){
+  int fact = fact * i;
+  result = fact;
   }
-  for(i = 1;i <= r;i++){
-    r_fact = r_fact * i;
-  }
-  for(i = 1;i <= diff;i++){
-    diff_fact = diff_fact * i;
-  }
-  nCr = (n_fact) / (r_fact * diff_fact);
-  return nCr;
+  return result;
 }
 
 void output(int n, int r, int result){
